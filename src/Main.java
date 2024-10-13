@@ -1,11 +1,16 @@
 public class Main {
     public static void task1() {
-        System.out.println("Task3");
+        System.out.println("Task1");
+        short year = 2057; //ввод номера года
+        if (isLeapYear(year)) {
+            System.out.println(year + " год является високосным");
+        } else
+            System.out.println(year + " год не является високосным");
+        System.out.println();
+    }
 
-        short year = 2021; //ввод номера года
-
-        boolean isLeapYear = ((year / 400 * 400 == year && year > 1584)
-                || (year / 4 * 4 == year && !(year / 100 * 100 == year) && year > 1584));
+    public static boolean isLeapYear(short year) {
+        return (year > 1584 && (year % 400 == 0 || (year % 4 == 0 && !(year % 100 == 0))));
     }
 
     public static void task2() {
